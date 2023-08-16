@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="login.css">
+	<title>VIEW transport</title>
+	<a ><link rel="shortcut icon" href="image\logo1.jpeg" height="1000px" type="imagex-icon"></a>
+</head>
+<body>
+	<a><img src="image\viitlogo.jpeg" style=" width:100%"></a>
+	<div class="view1" >
+		<div class="center">
+<button onclick="document.getElementById('id01').style.display='block'" style="width:150px;float: right;">Login </button>
+</div>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate"  method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <a><img src="image\avatarlogo.jpeg" alt="Avatar" class="avatar"></a>
+    </div>
+    <div class="container3">
+        
+      <form>
+   <label> Username<input type="text" placeholder="Username" id="text1" /><br></br></label>
+    <label>Password<input type="password" placeholder="Password" id="text2" /><br></br></label>
+    <button type="button" value="Login"  onclick="javascript:validate()"/>login</button> 
+    <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    <div class="container3" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+</form>
+      
+
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+    </div>
+	
+	<a><img src="image\viit.jpeg" style="width:100%; height:500px"></a>
+  
+<script type="text/javascript">
+function validate()
+{
+    if(   document.getElementById("text1").value == "VIIT"
+       && document.getElementById("text2").value == "viit@123" )
+    {
+        location.href="http://localhost/Transport-project/viewcontent.php";
+    }
+    else
+    {
+        alert( "validation failed" );
+    }
+}
+</script>
+</body>
+</html>

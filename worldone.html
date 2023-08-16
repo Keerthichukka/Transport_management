@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>VIEW transport</title>
+	<a ><link rel="shortcut icon" href="image\logo1.jpeg" height="1000px" type="imagex-icon"></a>
+ 
+  <style type="text/css">
+   button {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+button:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+
+
+    </style>
+    
+ 
+</head>
+<body>
+	<a><img src="image\worldone.jpeg" style=" width:100%;height:190px;"></a>
+  <div class="container" style="background-color:navy; block-size: 60px; padding-top: 10px; padding-left: 10px;">
+    <a href="photo1.html" target="rightframe" ><button style="font-size:20px;">HOME</button></a>
+    &nbsp&nbsp&nbsp
+  <a href="http://localhost/Transport-project/schoolcontent.php" target="rightframe" ><button style="font-size:20px;">LIST OF BUSES</button></a>
+  &nbsp&nbsp&nbsp
+  <a href="http://localhost/Transport-project/school_staff.php" target="rightframe" ><button style="font-size:20px;">STAFF</button></a>
+  &nbsp&nbsp&nbsp
+  <a href="http://localhost/Transport-project/school_student.php" target="rightframe" ><button style="font-size:20px;">STUDENT</button></a>
+  &nbsp&nbsp&nbsp
+  <a href="http://localhost/Transport-project/school-income.php" target="rightframe" ><button style="font-size:20px;">INCOME</button></a>
+ 
+  </div>
+</body>
+</html>

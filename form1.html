@@ -1,0 +1,244 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "transport-project";
+
+// creating a connection
+$connection = new mysqli($servername, $username, $password, $database);
+
+$name ="";
+$roll_number ="";
+$current_year ="";
+$year_of_enrollment ="";
+$branch ="";
+$college_name ="";
+$mobile_number ="";
+$address ="";
+$parent_name ="";
+$parent_number ="";
+$boarding_point ="";
+$gender="";
+if($_SERVER['REQUEST_METHOD']=='POST')
+{
+    $name = $_POST['name'];
+    $roll_number=$_POST['roll_number'];
+    $current_year=$_POST['current_year'];
+    $year_of_enrollment=$_POST['year_of_enrollment'];
+    $branch=$_POST['branch'];
+    $college_name=$_POST['college_name'];
+    $mobile_number=$_POST['mobile_number'];
+    $address=$_POST['address'];
+    $parent_name=$_POST['parent_name'];
+    $parent_number=$_POST['parent_number'];
+    $boarding_point=$_POST['boarding_point'];
+    $gender=$_POST['gender'];
+        /*do{
+         if(empty($BUS_NUMBER)||empty($BOARDING_TIME)|| empty($BUS_DRIVER)|| empty($CONTACT_NUMBER)||empty($STOPS)||empty($NO_OF_PASSENGERS))
+         {
+            $errorMessage="All the fileds are required";
+            break;
+         }*/
+         $sql = "INSERT INTO student (name,roll_number,current_year,year_of_enrollment,branch,college_name,mobile_number,address,parent_name,parent_number,boarding_point,gender) VALUES ('$name','$roll_number','$current_year','$year_of_enrollment','$branch','$college_name','$mobile_number','$address','$parent_name','$parent_number','$boarding_point','$gender')";
+        $result=$connection->query($sql);
+        if(!$result)
+        {
+            $errorMessage="Invalid query:" .$connection->error;
+            break;
+        }
+        $name ="";
+        $roll_number ="";
+        $current_year ="";
+        $year_of_enrollment ="";
+        $branch ="";
+        $college_name ="";
+        $mobile_number ="";
+        $address ="";
+        $parent_name ="";
+        $parent_number ="";
+        $boarding_point ="";
+        $gender="";
+$successMessage="Client added correctly";
+/*header("location: /Transport-project/viewcontent.php");*/
+exit;
+        }while(false);
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charaset="UTF-8">
+        <meta http-enquiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" channel ="wifth=device-width,initial-scale=1.0">
+        <title> Transport</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <form>
+        <div class="text">
+            <br>
+          <center>  <h1> Student Registeration Form</h1> </center>
+          <hr> 
+          <h2>DUVVADA TRANSPORT REGISTRATION</h2>
+        <p>This Form has been Created for the Transport Registration of the New/ Old Students and Staff looking to have a Transport facility at VIGNAN University. Kindly fill your details properly.</p>
+        
+        <h4><I>If any doubt, Please contact below number.</I></h4>
+        
+        <h4>1)     CH. KEERTHI ( Admin) - Transport Manager- Contact Number: 9392955063</h4> 
+        <h4><b>PLEASE NOTE:</b> </h4>
+        
+        <h4 style="color: red";>* If You are trying offline Mode, please pay before registering the Form. otherwise, the form will consider invalid.</h4>
+        <h4 style="color: red";>* This is applicable for the students who want to use Vignan Buses for 2022-23 only.</h4>
+        <hr>
+        </div>
+        <br>
+        <div class="container my-5">
+            <form method="post">
+        <div class="text1">
+            <label for="name">Full Name <b style="color: red";>*</b></label> 
+            <p style="font-size: 15px;font-weight: normal;">Strictly as per university records</p>
+            <input type="text" id="name" name="name" required maxlength="20" value="<?php echo $name;?>"><br><br>
+          
+            <label >User Category:</label><br><br>
+  <label class="form-control">
+    <input  type="radio" name="radio" value="Student"/>
+    Student
+  </label><BR>
+  <label class="form-control">
+    <input type="radio" name="radio" value="Staff"/>
+    Staff
+  </label><br><br>
+
+  <label>User:</label><p style="font-size: 15px;font-weight: normal;" >If the Student is newly applying to the ViGNAN Transport Service. Kindly, Select the "NEW" option.otherwise, select the "Existing" option.</p>
+
+  <label class="form-control">
+    <input type="radio" name="radio1" value="New"/>
+    New
+  </label><br>
+  <label class="form-control">
+    <input type="radio" name="radio1" value="Existing"/>
+    Existing
+  </label><br><br>
+  
+  <label for="roll_number">Roll Number/Employee Id:</label>
+  <input type="text" id="rollno" name="rollno" required maxlength="10"><br><br>
+  
+  <label>Current Year:</label><br><br>
+
+ 
+  <label for="current_year" class="form-control">
+    <input type="radio" name="radio2" value="1st Year" value="<?php echo $current_year;?>"/>
+    1st year
+  </label><br>
+  <label class="form-control">
+    <input type="radio" name="radio2" value="2nd Year" value="<?php echo $current_year;?>"/>
+   2nd year
+  </label><br>
+
+  <label class="form-control">
+    <input type="radio" name="radio2" value="3rd Year" value="<?php echo $current_year;?>"/>
+    3rd year
+  </label><br>
+  <label class="form-control">
+    <input type="radio" name="radio2" value="4th Year"value="<?php echo $current_year;?>"/>
+   4th year
+  </label><br>
+  <label class="form-control">
+    <input type="radio" name="radio2" value="NA" value="<?php echo $current_year;?>"/>
+    NA
+  </label><br><br>
+  
+  
+  <label for="enrollment_of_year">Year of Enrollment:</label>
+  <input type="text" id="enrollmentyear" name="enrollmentyear" value="<?php echo $year_of_enrollment;?>"><br><br>
+  
+  <label for="branch">Branch:</label><br><br>
+  <select>
+  <option>SELECT</option>
+  <option value="CSE" value="<?php echo $branch;?>">CSE</option>
+  <option value="IT" value="<?php echo $branch;?>">IT</option>
+  <option value="ECE" value="<?php echo $branch;?>">ECE</option>
+  <option value="EEE" value="<?php echo $branch;?>">EEE</option>
+  <option value="MECH" value="<?php echo $branch;?>">MECH</option>
+  <option value="MBA" value="<?php echo $branch;?>">MBA</option>
+  </select>
+  <br><br>
+  
+  <label for="college_name">College Name:</label>
+  <BR><BR>
+  <label class="form-control">
+    <input type="radio" name="radio3" value="VIEW" value="<?php echo $college_name;?>"/>
+    VIGNAN'S INSTITUTE OF ENGINEERING FOR WOMEN (VIEW)
+  </label><br>
+  <label class="form-control">
+    <input type="radio" name="radio3" value="VIIT" value="<?php echo $college_name;?>"/>
+   VIGNAN'S INSTITUTE OF INFORMATION TECHNOLOGY (VIIT)
+  </label><br>
+
+  <label class="form-control">
+    <input type="radio" name="radio3" value="VIPT" value="<?php echo $college_name;?>"/>
+    VIGNAN'S INSTITUTE OF PHARMACEUTICAL TECHNOLOGY (VIPT)
+  </label><br><BR>
+
+  <label >Gender:</label><br><br>
+
+  <label class="form-control">
+    <input type="radio" name="radio9" value="MALE" value="<?php echo $gender;?>"/>
+    MALE
+  </label><br>
+  <label class="form-control">
+    <input type="radio" name="radio9" value="FEMALE" value="<?php echo $gender;?>"/>
+    FEMALE
+  </label><br><br>
+  
+  
+  <label for="mobile_number">Mobile Number:</label>
+  <input type="text" id="mobile" name="mobile" value="<?php echo $mobile_number;?>"><br><br>
+  
+  <label for="address">Address:</label>
+  <br>
+  <textarea id="address" name="address" value="<?php echo $address;?>"></textarea><br><br>
+  
+  <label for="parent_name">Parent Name:</label>
+  <input type="text" id="parentname" name="parentname" value="<?php echo $parent_name;?>"><br><br>
+  
+  <label for="parent_number">Parent Contact Number:</label>
+  <input type="text" id="parentcontact" name="parentcontact" value="<?php echo $parent_number;?>"><br><br>
+  
+  
+  
+  <label for="boarding_point">Boarding Point:</label>
+  <input type="text" id="boardingpoint" name="boardingpoint" value="<?php echo $boarding_point;?>"><br><br>
+  
+  <label for="photo">Photo:</label>
+  <input type="file" id="photo" name="photo"><br><br>
+
+                
+        <?php
+        if(!empty($successMessage))
+        {
+            echo "
+            <div class='row mb-3'>
+            <div class='offset-sm-3 col-sm-6'>
+            <div class='alert alert-success alert-dismissable fade show' role='alert'>
+                <strong>$successMessage</strong>
+                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+           </div>
+           </div>
+           </div>
+                ";
+        }
+        ?>
+        <div class="row mb-3">
+            <div class="offset-sm-3 col-sm-3 d-grid">
+                <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+<div class="col-sm-3 d-grid">
+    <a class="btn btn-outline-primary" href="/Transport-project/viewcontent.php" role="button">Cancel</a>
+</div>
+</div>
+</form>
+</div>
+</body>
+</html>

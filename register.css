@@ -1,0 +1,86 @@
+.name
+{
+   border: 1px solid black;
+}
+.text
+{
+  padding: 20px 20px;
+  background-color: navy;
+  color: white;
+}
+
+body{  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: #5DADE2;  
+}  
+.container {  
+    padding: 50px 50px;
+    width:60%;
+    margin: auto;  
+  background-color: white ; 
+  
+}  
+  
+input[type=text], textarea {  
+  width: 95%;  
+  padding: 15px;  
+  margin: 5px 0 22px 0;  
+  display: inline-block;  
+  border: none;  
+  border: 3px solid #ccc;
+  background: #f1f1f1;  
+}  
+input[type=text]:focus, input[type=password]:focus {  
+  background-color: lightgrey;  
+  outline: none;
+  border: 1px solid black;
+
+
+
+} 
+.h1
+{
+  color:navyblue;
+} 
+ 
+hr {  
+  border: 1px solid #f1f1f1;  
+  margin-bottom: 25px;  
+}  
+.text1{
+  padding: 25px;
+  font-size: 20px;
+  font-weight: bold;
+}  
+ 
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+ 
+ select
+ {
+    width:695px; 
+    height:50px;  
+    border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none; 
+  font-size: 15px;
+  background-color: whitesmoke;
+
+ }
+ .form-control{
+  font-size: 20px;
+  font-weight: normal;
+ }
